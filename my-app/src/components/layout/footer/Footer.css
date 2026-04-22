@@ -54,7 +54,9 @@
 .input-email-to-subscribe {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    color: #FFFFFF;
+    color: rgb(113, 113, 130);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
     background-color: #F3F3F5;
     width: 231px;
     height: 42px;
