@@ -1,0 +1,28 @@
+.main-content-in-cart {
+  width: 1200px;
+  height: 926px;
+  padding: 32px 32px 0px 32px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid green;
+  margin: auto;
+}
+
+.title-cart-name {
+  height: 36px;
+  font-size: 24px;
+  color: #0A0A0A;
+  font-weight: 500;
+  margin: 0;
+}
+
+.main-cart-container {
+  border: 1px solid green;
+  width: 1136px;
+  height: 100%;
+  padding: 0px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+}

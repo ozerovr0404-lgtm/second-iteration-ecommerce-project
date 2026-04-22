@@ -1,16 +1,16 @@
-import './PageBody.css';
+import './Listing.css';
 import ProductCard from './productCard/ProductCard';
 import Sidebar from './sidebar/Sidebar';
 import SpecialOffer from './specialOffer/SpecialOffer';
-import SortProduct from './sortProduct/sortProduct';
+import SortProduct from './sortProduct/SortProduct';
 import ProductGrid from './productGrid/ProductGrid';
-import products from '../../../data/products';
+import products  from '../../data/products'; 
 
-function PageBody () {
+function Listing ({ pageType }) {
 
-  const tvProducts = products.filter(prod => prod.category === "tv");
-  const sortedProducts = tvProducts;
-  const brands = [...new Set(tvProducts.map(pr => pr.brand))];
+  const baseProducts  = products.filter(prod => prod.category === pageType);
+  const sortedProducts = baseProducts;
+  const brands = [...new Set(baseProducts .map(pr => pr.brand))];
 
     return (
       <div className='pagebody-conteiner'>
@@ -27,7 +27,7 @@ function PageBody () {
 
           <div className='product-cards-main-container'>
             <ProductGrid>
-              {tvProducts.map( product => (
+              {sortedProducts.map( product => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </ProductGrid>
@@ -38,4 +38,4 @@ function PageBody () {
     )
 }
 
-export default PageBody;
+export default Listing;
