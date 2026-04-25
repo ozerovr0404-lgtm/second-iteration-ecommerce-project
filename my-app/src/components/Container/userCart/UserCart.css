@@ -5,7 +5,6 @@
   gap: 32px;
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
   margin: auto;
 }
 
@@ -18,11 +17,20 @@
 }
 
 .main-cart-container {
-  border: 1px solid green;
   width: 1136px;
   height: 100%;
   padding: 0px;
   margin-bottom: 32px;
   display: flex;
+  flex-direction: row;
+}
+
+.product-card-grid-for-shopping-cart {
+  display: flex;
   flex-direction: column;
+  width: 746px;
+  height: 379px;
+  gap: 16px;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }

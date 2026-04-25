@@ -1,0 +1,17 @@
+.shopping-product-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 130px;
+  border-radius: 10px;
+  border: 1px solid #0000001A;
+  gap: 16px;
+  padding: 16px;
+  background-color: #FFFFFF;
+}
+
+.image-card-for-shopping-cart {
+  width: 96px;
+  height: 96px;
+  border-radius: 10px;
+}

@@ -1,4 +1,6 @@
 import './UserCart.css';
+import ProdCardInCart from '../../Listing/prodCardInCart/ProdCardInCart';
+import OrderSummary from '../../Listing/orderSummary/OrderSummary';
 
 function UserCart () {
   return (
@@ -7,7 +9,10 @@ function UserCart () {
         Shopping Cart
       </p>
       <div className='main-cart-container'>
-        
+        <div className='product-card-grid-for-shopping-cart'>
+          <ProdCardInCart></ProdCardInCart>
+        </div>
+        <OrderSummary></OrderSummary>
       </div>
     </div>
   )
