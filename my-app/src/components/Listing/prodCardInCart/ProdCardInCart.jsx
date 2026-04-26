@@ -1,36 +1,57 @@
 import './ProdCardInCart.css';
-import products from '../../../data/products';
 
-function ProdCardInCart () {
+function ProdCardInCart ({ product, increaseQty, decreaseQty, removeFromCart }) {
 
-  const image = products.images;
+  const image = product.images[0];
 
   return (
     <div className='shopping-product-container'>
-      <img src="delete-icon.svg" className='delete-cart-icon'/>
-      <img src={image} className='image-card-for-shopping-cart'/>
+      <button 
+        className='delete-cart-button'
+        onClick={() => removeFromCart(product.id)}
+      >
+        <img 
+          src="delete-icon.svg" 
+          className='delete-cart-icon'
+        />
+      </button>
+      <img 
+        src={image} 
+        className='image-card-for-shopping-cart'
+      />
       <div className='product-card-info-in-shopping'>
         
         <p className='brand-in-shopping-cart'>
-          Vizio
+          {product.brand}
         </p>
         <p className='model-in-shopping-cart'>
-          M-Series 4K 65"
+          {product.model}
         </p>
+
         <div className='current-counter-in-shopping-cart'>
           <div className='button-container-in-shopping-cart'>
-            <button className='minus-button-in-shopping-cart'>
+
+            <button 
+              className='minus-button-in-shopping-cart'
+              onClick={() => decreaseQty(product.id)}
+            >
               <img src="minus-in-cart.svg"/>
             </button>
+
             <div className='counter-add-product'>
-              1
+              {product.quantity}
             </div>
-            <button className='plus-button-in-shopping-cart'>
+
+            <button 
+              className='plus-button-in-shopping-cart'
+              onClick={() => increaseQty(product.id)}
+            >
               <img src="plus-in-cart.svg" alt="" />
             </button>
+
           </div>
           <p className='price-product-in-shopping-cart'>
-            $599
+            {`$${product.price}`}
           </p>
         </div>
       </div>

@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import './ProductCard.css';
 
-function ProductCard ({ product }) {
+function ProductCard ({ product, cartItems, addProdToCart, increaseQty, decreaseQty }) {
 
   const [imageIndex, setImageIndex] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
-  const [countProduct, setCountProduct] = useState(0);
 
   const images = product.images;
   const hasMultipleImg = images.length > 1;
+  const cartItem = cartItems.find(item => item.id === product.id);
+  const quantity = cartItem ? cartItem.quantity : 0;
 
   if (!product) return null;
 
@@ -69,12 +70,11 @@ function ProductCard ({ product }) {
         <p className='product-price'>
           {`$${product.price.toLocaleString('en-US')}`}
         </p>
-
-
-        {countProduct === 0 ? (
+        
+        {quantity === 0 ? (
           <button 
             className='add-to-cart-current-product'
-            onClick={() => setCountProduct(1)}
+            onClick={() => addProdToCart(product)}
           >
             Add to Cart
           </button>
@@ -82,16 +82,16 @@ function ProductCard ({ product }) {
           <div className='product-in-cart-counter-container'>
             <button 
               className='minus-button'
-              onClick={() => setCountProduct(prev => Math.max(0, prev - 1))}
+              onClick={() => decreaseQty(product.id)}
             >
               <img src="minus-button.svg" alt="minus" />
             </button>
             <p className='text-counter-in-cart'>
-              {countProduct} in cart
+              {quantity} in cart
             </p>
             <button 
               className='plus-button'
-              onClick={() => setCountProduct(prev => prev + 1)}
+              onClick={() => increaseQty(product.id)}
             >
               <img src="plus-button.svg" alt="plus" />
             </button>

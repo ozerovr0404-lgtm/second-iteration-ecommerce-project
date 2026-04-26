@@ -35,7 +35,7 @@
 
 .model-in-shopping-cart {
   margin: 0px;
-  width: 129px;
+  width: 200px;
   height: 27px;
 }
 
@@ -89,10 +89,26 @@
 }
 
 .delete-cart-icon {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.delete-cart-button {
   position: absolute;
   top: 16px;
   right: 16px;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+}
+
+.delete-cart-button:hover {
+  opacity: 0.8;
 }

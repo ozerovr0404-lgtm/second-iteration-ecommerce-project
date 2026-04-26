@@ -3,7 +3,7 @@ import Header from './header/Header';
 import Footer from './footer/Footer';
 import Content from './content/Content';
 
-function Layout ({ pageType, setPageType }) {
+function Layout ({ pageType, setPageType, cartItems, addProdToCart, increaseQty, decreaseQty, removeFromCart }) {
     return (
       <>
         <Header
@@ -11,7 +11,15 @@ function Layout ({ pageType, setPageType }) {
           setPageType={setPageType}
         />
         
-        <Content pageType={pageType} />
+        <Content 
+          setPageType={setPageType}
+          pageType={pageType} 
+          cartItems={cartItems}
+          addProdToCart={addProdToCart}
+          increaseQty={increaseQty}
+          decreaseQty={decreaseQty}
+          removeFromCart={removeFromCart}
+        />
         
         <Footer />
       </>

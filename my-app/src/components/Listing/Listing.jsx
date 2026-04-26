@@ -7,7 +7,7 @@ import SortProduct from './sortProduct/SortProduct';
 import ProductGrid from './productGrid/ProductGrid';
 import products  from '../../data/products'; 
 
-function Listing ({ pageType }) {
+function Listing ({ pageType, addProdToCart, cartItems, increaseQty, decreaseQty }) {
 
   const [filterMinPrice, setFilterMinPrice] = useState(0);
   const [filterMaxPrice, setFilterMaxPrice] = useState(5000);
@@ -66,7 +66,7 @@ function Listing ({ pageType }) {
           <div className='product-cards-main-container'>
             <ProductGrid>
               {sortedProducts.map( product => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.id} product={product} addProdToCart={addProdToCart} cartItems={cartItems} increaseQty={increaseQty} decreaseQty={decreaseQty} />
               ))}
             </ProductGrid>
           </div>
