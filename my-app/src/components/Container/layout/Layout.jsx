@@ -9,6 +9,7 @@ function Layout ({ pageType, setPageType, cartItems, addProdToCart, increaseQty,
         <Header
           pageType={pageType}
           setPageType={setPageType}
+          cartItems={cartItems}
         />
         
         <Content 

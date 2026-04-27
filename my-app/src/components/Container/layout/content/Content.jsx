@@ -7,7 +7,8 @@ function Content ({ pageType, cartItems, addProdToCart, increaseQty, decreaseQty
     return <UserCart cartItems={cartItems} increaseQty={increaseQty} decreaseQty={decreaseQty} removeFromCart={removeFromCart} setPageType={setPageType} />
   }
 
-  return  <Listing 
+  return  <Listing
+            key={pageType}
             pageType={pageType} 
             addProdToCart={addProdToCart} 
             cartItems={cartItems}

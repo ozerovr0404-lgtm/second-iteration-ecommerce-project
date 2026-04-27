@@ -1,6 +1,11 @@
 import './Header.css';
 
-function Header ({ setPageType }) {
+function Header ({ setPageType, cartItems }) {
+
+    const totalItems = cartItems.reduce((sum, item) => {
+      return sum + item.quantity;
+    }, 0);
+
     return (
         <div className='header-main-conteiner-row'>
           <div className='conteiner-title'>
@@ -32,6 +37,11 @@ function Header ({ setPageType }) {
                 onClick={() => setPageType('cart')}
               >
                   <img src="/cart.png" alt="Упс!" />
+
+                  {totalItems ? (<span className='badge'>
+                    {totalItems}
+                  </span>) : ''}
+                  
               </button>
               <button className='button-icon'>
                   <img src="/user-icon.png" alt="Упс!" />
